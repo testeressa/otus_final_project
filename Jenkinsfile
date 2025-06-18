@@ -2,8 +2,6 @@ pipeline {
     agent {
         dockerContainer {
             image 'jenkins-python-agent'
-            label 'docker'
-            args '-v /tmp:/tmp'  // Доп. параметры контейнера
         }
     }
 
