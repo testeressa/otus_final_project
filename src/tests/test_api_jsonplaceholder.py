@@ -3,6 +3,7 @@ import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
+
 # Тесты метода GET
 @pytest.mark.parametrize("post_id, expected_status", [
     (1, 200),
@@ -17,6 +18,7 @@ def test_get_post_by_id(post_id, expected_status):
     if expected_status == 200:
         assert "id" in response.json()
         assert response.json()["id"] == post_id
+
 
 @pytest.mark.parametrize("user_id, expected_count", [
     (1, 10),          # валидный user_id
@@ -33,6 +35,7 @@ def test_get_posts_by_user(user_id, expected_count):
     if expected_count > 0:
         for post in response.json():
             assert post["userId"] == user_id
+
 
 # Тесты метода POST
 @pytest.mark.parametrize("data, expected_status", [
@@ -57,7 +60,8 @@ def test_create_post(data, expected_status):
     (1, {"title": "new", "body": "new"}, 200, {"title": "new", "body": "new"}),
 
     # Несуществующие ID
-    (999, {"title": "updated"}, 200, {}),  # jsonplaceholder всегда возвращает 200
+    (999, {"title": "updated"}, 200, {}),
+    # jsonplaceholder всегда возвращает 200
 
     # Невалидные данные
     (1, {"invalid_field": "value"}, 200, {}),  # лишние поля игнорируются
@@ -80,6 +84,7 @@ def test_update_post(post_id, data, expected_status, expected_fields):
         if post_id and isinstance(post_id, int) and 1 <= post_id <= 100:
             assert response_data["id"] == post_id
 
+
 # Тесты метода DELETE
 @pytest.mark.parametrize("post_id, expected_status", [
     (1, 200),       # валидный ID → 200 OK
@@ -94,6 +99,7 @@ def test_delete_post(post_id, expected_status):
     assert response.status_code == expected_status
     if expected_status == 200:
         assert response.json() == {}
+
 
 # Остальные тесты
 def test_post_structure():

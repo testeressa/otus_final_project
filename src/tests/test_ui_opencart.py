@@ -18,9 +18,12 @@ def test_login_succeed_and_logout(browser, ):
     page_admin.login_admin_page()
     page_admin.wait_for_title()
 
-    assert "Dashboard" in browser.title, "Редирект на страницу дашборда не выполнен"
-    assert page_admin.logout_button_is_displayed(), "Кнопка логаута на странице не обнаружена"
-    assert page_admin.name_is_displayed(), "Имя пользователя не выводится"
+    assert "Dashboard" in browser.title, \
+        "Редирект на страницу дашборда не выполнен"
+    assert page_admin.logout_button_is_displayed(), \
+        "Кнопка логаута на странице не обнаружена"
+    assert page_admin.name_is_displayed(), \
+        "Имя пользователя не выводится"
 
     page_admin.logout()
     page_admin.wait_for_title(title_text="Administration")
@@ -52,7 +55,8 @@ def test_currency_change_main_page(browser):
 
     updated_currency = page_main.get_current_currency()
 
-    assert initial_currency != updated_currency, 'Изменение валюты не применилось'
+    assert initial_currency != updated_currency, \
+        'Изменение валюты не применилось'
 
 
 @allure.title("Проверка изменения валюты в каталоге")
@@ -79,7 +83,8 @@ def test_currency_change_catalog(browser):
             attachment_type=allure.attachment_type.TEXT
         )
         assert initial_currency != updated_currency, (
-            f"Валюта не изменилась. Было: {initial_currency}, стало: {updated_currency}"
+            f"Валюта не изменилась. "
+            f"Было: {initial_currency}, стало: {updated_currency}"
         )
 
 
@@ -109,17 +114,20 @@ def test_add_new_product(browser):
             keyword_name=test_data["keyword"]
         )
 
-    with allure.step("4. Проверка сообщения об успешном добавлении"):
-        assert page_admin.is_success_message_displayed(), "Сообщение о добавлении товара не отображено"
+    with ((allure.step("4. Проверка сообщения об успешном добавлении"))):
+        assert page_admin.is_success_message_displayed(), \
+            "Нет сообщения о добавлении товара"
 
     with allure.step("5. Проверка увеличения количества товаров"):
         page_admin.navigate_to_products()
         updated_products_count = page_admin.get_products_count()
         assert initial_products_count < updated_products_count, (
-            f"Количество товаров не изменилось. Было: {initial_products_count}, стало: {updated_products_count}"
+            f"Количество товаров не изменилось. "
+            f"Было: {initial_products_count},"
+            f" стало: {updated_products_count}"
         )
 
-    assert initial_products_count < updated_products_count, "Товар не был добавлен"
+    assert initial_products_count < updated_products_count, "Товар не добавлен"
 
 
 @allure.title("Проврека удаления товара в админке")
@@ -157,6 +165,7 @@ def test_register_new_user(browser):
             f"Регистрация не удалась. Использованные данные: {test_data}"
         )
 
+
 @pytest.mark.parametrize("currency,currency_symbol", [
     ("EUR", "€"),
     ("GBP", "£"),
@@ -168,7 +177,7 @@ def test_switch_currency(browser, currency, currency_symbol):
     header = Header(browser)
     page_main = PageMain(browser)
 
-    with allure.step(f"Открываем главную страницу"):
+    with allure.step("Открываем главную страницу"):
         header.open(browser.url)
         WebDriverWait(browser, 5).until(
             EC.visibility_of_element_located(page_main.PRODUCT_CARD)
@@ -180,8 +189,8 @@ def test_switch_currency(browser, currency, currency_symbol):
             lambda d: currency_symbol in page_main.get_current_currency()[0]
         )
 
-    with allure.step(f"Проверяем, что текущая валюта {currency_symbol}"):
+    with (allure.step(f"Проверяем, что текущая валюта {currency_symbol}")):
         current_currency = page_main.get_current_currency()
-        # Check that ALL prices contain the currency symbol
         assert all(currency_symbol in price for price in current_currency), \
-            f"Не все цены отображаются в валюте {currency}. Найдены цены: {current_currency}"
+            f"Не все цены отображаются в валюте {currency}. \
+            Найдены цены: {current_currency}"
