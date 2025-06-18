@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'jenkins-python-agent'
+            label 'docker'
+            args '-v /tmp:/tmp'  # Доп. параметры контейнера
+        }
+    }
 
     environment {
         REPO_URL = 'https://github.com/testeressa/otus_final_project.git'
