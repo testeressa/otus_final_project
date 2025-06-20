@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        dockerContainer {
-            image 'jenkins-python-agent'
-        }
-    }
+    agent { label 'agent1' }
 
     environment {
         REPO_URL = 'https://github.com/testeressa/otus_final_project.git'
@@ -25,17 +21,17 @@ pipeline {
                 }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                    apt update -y && apt install -y python3-pip python3-venv
-                    python3 -m venv venv
-                    . venv/bin/activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
-                '''
-            }
-        }
+//         stage('Install Dependencies') {
+//             steps {
+//                 sh '''
+//                     apt update -y && apt install -y python3-pip python3-venv
+//                     python3 -m venv venv
+//                     . venv/bin/activate
+//                     pip install --upgrade pip
+//                     pip install -r requirements.txt
+//                 '''
+//             }
+//         }
 
         stage('Run Tests') {
             steps {
