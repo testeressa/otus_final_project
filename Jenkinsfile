@@ -36,7 +36,6 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                    . venv/bin/activate
                     pytest tests/ \
                         --alluredir=${ALLURE_RESULTS} \
                         --browser ${BROWSER} \
