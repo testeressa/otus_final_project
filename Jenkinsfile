@@ -36,7 +36,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                    pytest tests/ \
+                    pytest ${WORKSPACE}/src/tests/ \
                         --alluredir=${ALLURE_RESULTS} \
                         --browser ${BROWSER} \
                         --browser_version ${BROWSER_VERSION} \
