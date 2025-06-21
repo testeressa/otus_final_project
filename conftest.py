@@ -13,13 +13,15 @@ def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome")
     parser.addoption("--browser_version", default="128.0")
     parser.addoption("--headless", action="store_true")
-    parser.addoption("--url", default="http://192.168.0.12:8080")
+    parser.addoption("--url", default="http://192.168.0.12:8090")
     parser.addoption("--log_level", action="store", default="INFO")
     parser.addoption(
-        "--selenoid", action="store_true", help="Use Selenoid for remote browser execution"
+        "--selenoid", action="store_true",
+        help="Use Selenoid for remote browser execution"
     )
     parser.addoption(
-        "--selenoid_url", default="http://localhost:4444/wd/hub", help="Selenoid hub URL"
+        "--selenoid_url", default="http://localhost:4444/wd/hub",
+        help="Selenoid hub URL"
     )
 
 
@@ -59,7 +61,7 @@ def browser(request):
             options.set_capability("browserVersion", browser_version)
             options.set_capability("selenoid:options", {
                 "enableVNC": True,
-                "enableVideo": False,
+                "enableVideo": True,
                 "enableLog": True,
             })
             if headless:
@@ -88,7 +90,7 @@ def browser(request):
                 options.add_argument("--headless")
         elif browser_name == "yandex":
             options = ChromeOptions()
-            options.set_capability("browserName", "chrome")  # Yandex использует движок Chrome
+            options.set_capability("browserName", "chrome")
             options.set_capability("browserVersion", browser_version)
             options.set_capability("selenoid:options", {
                 "enableVNC": True,
