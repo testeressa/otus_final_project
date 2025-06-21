@@ -1,0 +1,8 @@
+INFO     test_switch_currency[EUR-\u20ac]:conftest.py:55 ===> Test started at 2025-06-21 19:10:56.910129
+INFO     test_switch_currency[EUR-\u20ac]:conftest.py:140 Browser chrome started
+INFO     test_switch_currency[EUR-\u20ac]:base_page.py:12 Header: Opening url: http://192.168.0.28:8091
+INFO     test_switch_currency[EUR-\u20ac]:header_element.py:31 Selecting currency: EUR
+INFO     test_switch_currency[EUR-\u20ac]:main_page.py:17 PageMain: Getting current currency
+INFO     test_switch_currency[EUR-\u20ac]:main_page.py:17 PageMain: Getting current currency
+INFO     test_switch_currency[EUR-\u20ac]:main_page.py:17 PageMain: Getting current currency
+INFO     test_switch_currency[EUR-\u20ac]:conftest.py:144 ===> Test finished at 2025-06-21 19:10:58.819700

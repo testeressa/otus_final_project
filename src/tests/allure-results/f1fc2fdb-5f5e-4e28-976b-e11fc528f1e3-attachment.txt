@@ -1,0 +1,7 @@
+INFO     test_switch_currency[GBP-\xa3]:conftest.py:55 ===> Test started at 2025-06-21 18:53:38.447161
+INFO     test_switch_currency[GBP-\xa3]:conftest.py:140 Browser chrome started
+INFO     test_switch_currency[GBP-\xa3]:base_page.py:12 Header: Opening url: http://192.168.0.28:8091
+INFO     test_switch_currency[GBP-\xa3]:header_element.py:31 Selecting currency: GBP
+INFO     test_switch_currency[GBP-\xa3]:main_page.py:17 PageMain: Getting current currency
+INFO     test_switch_currency[GBP-\xa3]:main_page.py:17 PageMain: Getting current currency
+INFO     test_switch_currency[GBP-\xa3]:conftest.py:144 ===> Test finished at 2025-06-21 18:53:39.716964

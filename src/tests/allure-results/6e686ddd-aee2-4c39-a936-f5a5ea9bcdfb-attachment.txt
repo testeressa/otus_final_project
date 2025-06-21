@@ -1,0 +1,8 @@
+INFO     test_register_new_user:conftest.py:55 ===> Test started at 2025-06-21 18:53:31.694218
+INFO     test_register_new_user:conftest.py:140 Browser chrome started
+INFO     test_register_new_user:base_page.py:12 PageRegistration: Opening url: http://192.168.0.28:8091
+INFO     test_register_new_user:registration_page.py:39 Navigating to registration page
+INFO     test_register_new_user:registration_page.py:34 Generated test data: {'firstname': 'Test_CEbUKI', 'lastname': 'User_NHnJiP', 'email': 'test_xHbRuD@example.com', 'password': 'Pass_fxbESj123!'}
+INFO     test_register_new_user:registration_page.py:62 Registering user with data: {'firstname': 'Test_CEbUKI', 'lastname': 'User_NHnJiP', 'email': 'test_xHbRuD@example.com', 'password': 'Pass_fxbESj123!'}
+INFO     test_register_new_user:registration_page.py:97 Registration success message: Register Account
+INFO     test_register_new_user:conftest.py:144 ===> Test finished at 2025-06-21 18:53:33.135103

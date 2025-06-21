@@ -1,0 +1,8 @@
+INFO     test_login_succeed_and_logout:conftest.py:55 ===> Test started at 2025-06-21 16:55:48.205131
+INFO     test_login_succeed_and_logout:conftest.py:140 Browser chrome started
+INFO     test_login_succeed_and_logout:base_page.py:12 PageAdmin: Opening url: http://192.168.0.21:8091/administration
+INFO     test_login_succeed_and_logout:admin_page.py:73 PageAdmin: Logging admin page
+INFO     test_login_succeed_and_logout:admin_page.py:40 PageAdmin: Filling in username input
+INFO     test_login_succeed_and_logout:admin_page.py:46 PageAdmin: Filling in password
+INFO     test_login_succeed_and_logout:admin_page.py:68 PageAdmin: Logging out
+INFO     test_login_succeed_and_logout:conftest.py:144 ===> Test finished at 2025-06-21 16:55:52.493284

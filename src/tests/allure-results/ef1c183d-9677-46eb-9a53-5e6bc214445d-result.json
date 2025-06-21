@@ -1,0 +1,1 @@
+{"name": "Проврека логина, разлогина в админке", "status": "skipped", "start": 1750508396780, "stop": 1750508396780, "uuid": "610ac84a-d927-4f22-bad0-11c75f8cdaf5", "testCaseId": "f24a19fb003e8cb571a16a322c7ed1d8", "fullName": "src.tests.test_ui_opencart#test_login_succeed_and_logout"}

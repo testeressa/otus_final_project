@@ -1,0 +1,4 @@
+INFO     test_add_new_product:conftest.py:53 ===> Test started at 2025-06-21 15:18:59.751726
+INFO     test_add_new_product:conftest.py:136 Browser chrome started
+INFO     test_add_new_product:base_page.py:12 PageAdmin: Opening url: http://192.168.0.12:8080/administration
+INFO     test_add_new_product:conftest.py:140 ===> Test finished at 2025-06-21 15:19:40.673260

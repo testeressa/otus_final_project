@@ -1,0 +1,9 @@
+INFO     test_delete_product:conftest.py:55 ===> Test started at 2025-06-21 18:53:25.304409
+INFO     test_delete_product:conftest.py:140 Browser chrome started
+INFO     test_delete_product:base_page.py:12 PageAdmin: Opening url: http://192.168.0.28:8091/administration
+INFO     test_delete_product:admin_page.py:73 PageAdmin: Logging admin page
+INFO     test_delete_product:admin_page.py:40 PageAdmin: Filling in username input
+INFO     test_delete_product:admin_page.py:46 PageAdmin: Filling in password
+INFO     test_delete_product:admin_page.py:85 PageAdmin: Going to products page
+INFO     test_delete_product:admin_page.py:149 PageAdmin: Deleting product
+INFO     test_delete_product:conftest.py:144 ===> Test finished at 2025-06-21 18:53:28.509023
