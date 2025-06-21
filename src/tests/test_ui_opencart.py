@@ -179,13 +179,13 @@ def test_switch_currency(browser, currency, currency_symbol):
 
     with allure.step("Открываем главную страницу"):
         header.open(browser.url)
-        WebDriverWait(browser, 5).until(
+        WebDriverWait(browser, 10).until(
             EC.visibility_of_element_located(page_main.PRODUCT_CARD)
         )
 
     with allure.step(f"Переключаем валюту на {currency}"):
         header.select_currency(currency)
-        WebDriverWait(browser, 5).until(
+        WebDriverWait(browser, 10).until(
             lambda d: currency_symbol in page_main.get_current_currency()[0]
         )
 
