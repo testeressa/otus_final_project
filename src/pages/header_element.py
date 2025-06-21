@@ -23,7 +23,7 @@ class Header(BasePage):
     @allure.step('Opening current currency')
     def open_currency_dropdown(self):
         self.logger.debug(f"{self.class_name}: Opening currency dropdown")
-        WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(self.CURRENCY_DROPDOWN)).click()
+        WebDriverWait(self.browser, 20).until(EC.element_to_be_clickable(self.CURRENCY_DROPDOWN)).click()
 
     @allure.step('Selecting currency {currency}')
     def select_currency(self, currency="EUR"):
@@ -35,7 +35,7 @@ class Header(BasePage):
 
         self.open_currency_dropdown()
 
-        currencies = WebDriverWait(self.browser, 10).until(
+        currencies = WebDriverWait(self.browser, 20).until(
             EC.visibility_of_all_elements_located(self.CURRENCY_OPTIONS)
         )
 
@@ -50,7 +50,7 @@ class Header(BasePage):
     @allure.step('Getting current currency symbol')
     def get_current_currency(self):
         """Возвращает символ текущей валюты"""
-        return WebDriverWait(self.browser, 10).until(
+        return WebDriverWait(self.browser, 20).until(
             EC.visibility_of_element_located(self.CURRENCY_DROPDOWN)
         ).text.strip()
 

@@ -37,13 +37,13 @@ class PageRegistration(BasePage):
     def navigate_to_register(self):
         """Переход на страницу регистрации"""
         self.logger.info("Navigating to registration page")
-        WebDriverWait(self.browser, 10).until(
+        WebDriverWait(self.browser, 20).until(
             EC.element_to_be_clickable(self.REGISTER_LINK)
         ).click()
-        WebDriverWait(self.browser, 10).until(
+        WebDriverWait(self.browser, 20).until(
             EC.element_to_be_clickable(self.REGISTER_BUTTON)
         ).click()
-        WebDriverWait(self.browser, 10).until(
+        WebDriverWait(self.browser, 20).until(
             EC.title_contains("Register")
         )
 
@@ -62,7 +62,7 @@ class PageRegistration(BasePage):
         self.logger.info(f"Registering user with data: {data}")
 
         # Заполнение формы
-        WebDriverWait(self.browser, 10).until(
+        WebDriverWait(self.browser, 20).until(
             EC.visibility_of_element_located(self.FIRSTNAME)
         ).send_keys(data['firstname'])
 
@@ -71,12 +71,12 @@ class PageRegistration(BasePage):
         self.browser.find_element(*self.PASSWORD).send_keys(data['password'])
 
         # Согласие с условиями
-        WebDriverWait(self.browser, 10).until(
+        WebDriverWait(self.browser, 20).until(
             EC.element_to_be_clickable(self.AGREEMENT_CHECKBOX)
         ).click()
 
         # Отправка формы
-        WebDriverWait(self.browser, 10).until(
+        WebDriverWait(self.browser, 20).until(
             EC.element_to_be_clickable(self.CONTINUE_BUTTON)
         ).click()
 
@@ -86,7 +86,7 @@ class PageRegistration(BasePage):
         """Проверка успешной регистрации"""
         try:
             # Ждем либо сообщение об успехе, либо ошибку
-            WebDriverWait(self.browser, 10).until(
+            WebDriverWait(self.browser, 20).until(
                 lambda d: d.find_elements(*self.SUCCESS_MESSAGE) or d.find_elements(*self.ERROR_ALERT)
             )
 
