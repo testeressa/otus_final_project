@@ -17,4 +17,3 @@ class PageMain(BasePage):
         self.logger.info(f"{self.class_name}: Getting current currency")
         products = self.browser.find_elements(*self.PRODUCT_CARD)
         return [product.find_element(*self.PRODUCT_PRICE).text for product in products]
-
