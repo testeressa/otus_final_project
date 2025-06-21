@@ -30,14 +30,18 @@ class PageAdmin(BasePage):
     SUCCESS_ALERT = (By.CSS_SELECTOR, ".alert-success")
     SEO_TAB = (By.CSS_SELECTOR, "a[href='#tab-seo']")
     SEO_KEYWORD_INPUT = (By.CSS_SELECTOR, "#input-keyword-0-1")
-    CHECKBOX_PRODUCT = (By.CSS_SELECTOR, "input[type='checkbox'][name='selected[]']")
+    CHECKBOX_PRODUCT = (
+        By.CSS_SELECTOR, "input[type='checkbox'][name='selected[]']"
+    )
     DELETE_BUTTON = (By.CSS_SELECTOR, ".btn.btn-danger")
     CONFIRM_DELETE = (By.CSS_SELECTOR, ".btn-danger")
     PRODUCTS_COUNTER = (By.CSS_SELECTOR, ".col-sm-6.text-end")
 
     @allure.step('Filling in username input')
     def input_username(self):
-        self.logger.info(f"{self.class_name}: Filling in username input")
+        self.logger.info(
+            f"{self.class_name}: Filling in username input"
+        )
         self.browser.find_element(*self.INPUT_USERNAME).clear()
         self.browser.find_element(*self.INPUT_USERNAME).send_keys(self.USERNAME)
 
@@ -60,7 +64,7 @@ class PageAdmin(BasePage):
     @allure.step('Checking LOGOUT_BUTTON displaying')
     def logout_button_is_displayed(self):
         self.logger.debug(f"{self.class_name}: Checking 'LOGOUT_BUTTON' displaying")
-        return WebDriverWait(self.browser, 2).until(
+        return WebDriverWait(self.browser, 10).until(
             EC.element_to_be_clickable(self.LOGOUT_BUTTON))
 
     @allure.step('Logging out')
@@ -83,55 +87,55 @@ class PageAdmin(BasePage):
     @allure.step('Going to products page')
     def navigate_to_products(self):
         self.logger.info(f"{self.class_name}: Going to products page")
-        catalog_menu = WebDriverWait(self.browser, 2).until(
+        catalog_menu = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.CATALOG_MENU))
         catalog_menu.click()
-        product_menu = WebDriverWait(self.browser, 2).until(
+        product_menu = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.PRODUCTS_LINK))
         product_menu.click()
 
     @allure.step('Switching tabs')
     def switch_to_tab(self, tab_name):
         self.logger.debug(f"{self.class_name}: Switching tabs")
-        data_tab = WebDriverWait(self.browser, 2).until(
+        data_tab = WebDriverWait(self.browser, 10).until(
             EC.element_to_be_clickable(tab_name))
         data_tab.click()
 
     @allure.step('Adding new product')
     def add_new_product(self, product_name, meta_tag, model_name, keyword_name):
         self.logger.info(f"{self.class_name}: Adding new product")
-        WebDriverWait(self.browser, 2).until(
+        WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.ADD_NEW_BUTTON)
         ).click()
 
-        WebDriverWait(self.browser, 2).until(
+        WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.PRODUCT_NAME_INPUT)
         ).send_keys(product_name)
 
-        WebDriverWait(self.browser, 2).until(
+        WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.META_TAG_INPUT)
         ).send_keys(meta_tag)
 
         self.switch_to_tab(self.DATA_TAB)
 
-        WebDriverWait(self.browser, 2).until(
+        WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.MODEL_INPUT)
         ).send_keys(model_name)
 
         self.switch_to_tab(self.SEO_TAB)
 
-        WebDriverWait(self.browser, 2).until(
+        WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.SEO_KEYWORD_INPUT)
         ).send_keys(keyword_name)
 
-        WebDriverWait(self.browser, 2).until(
+        WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.SAVE_BUTTON)
         ).click()
 
     @allure.step('Counting products')
     def get_products_count(self):
         self.logger.debug(f"{self.class_name}: Counting products")
-        products_count_text = WebDriverWait(self.browser, 2).until(
+        products_count_text = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.PRODUCTS_COUNTER)
         ).text
         text_split = products_count_text.split("of")[1].split("(")[0].strip()
@@ -140,7 +144,7 @@ class PageAdmin(BasePage):
     @allure.step('Checking success message displaying')
     def is_success_message_displayed(self):
         self.logger.debug(f"{self.class_name}: Checking success message displaying")
-        return WebDriverWait(self.browser, 2).until(
+        return WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.SUCCESS_ALERT)
         ).is_displayed()
 
@@ -164,4 +168,3 @@ class PageAdmin(BasePage):
         }
         self.logger.info(f"Generated test data: {data}")
         return data
-

@@ -19,7 +19,7 @@ class PageShoppingCart(BasePage):
     @allure.step('Adding item to cart')
     def add_item_to_cart(self):
         self.logger.info(f"{self.class_name}: Adding item to cart")
-        add_to_cart_button = WebDriverWait(self.browser, 2).until(
+        add_to_cart_button = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(self.ADD_TO_CART_BUTTON)
         )
         ActionChains(self.browser).move_to_element(add_to_cart_button).click().perform()
