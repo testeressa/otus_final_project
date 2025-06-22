@@ -40,13 +40,11 @@ pipeline {
     post {
         always {
             script {
-                // Allure Report
-                allure includeProperties: false, jdk: '', results: [[path: "/allure-results"]]
+                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+                    allure includeProperties: false, jdk: '', results: [[path: "/allure-results"]]
+                }
             }
-
-            // Архивация артефактов
             archiveArtifacts artifacts: "/allure-results/**", fingerprint: true
         }
     }
-}
 
