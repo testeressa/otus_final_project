@@ -41,11 +41,11 @@ pipeline {
         always {
             script {
                 // Allure Report
-                allure includeProperties: false, jdk: '', results: [[path: "${WORKSPACE}/allure-results"]]
+                allure includeProperties: false, jdk: '', results: [[path: "/allure-results"]]
             }
 
             // Архивация артефактов
-            archiveArtifacts artifacts: "${WORKSPACE}/allure-results/**", fingerprint: true
+            archiveArtifacts artifacts: "/allure-results/**", fingerprint: true
         }
     }
 }
