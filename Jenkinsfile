@@ -8,7 +8,7 @@ pipeline {
 
     parameters {
         string(name: 'SELENOID_URL', defaultValue: 'http://host.docker.internal:4444/wd/hub', description: 'Selenoid Executor URL')
-        string(name: 'OPENCART_URL', defaultValue: 'http://host.docker.internal:8090', description: 'OpenCart App URL')
+        string(name: 'OPENCART_URL', defaultValue: 'http://192.168.65.254:8090', description: 'OpenCart App URL')
         choice(name: 'BROWSER', choices: ['chrome', 'firefox'], description: 'Browser')
         string(name: 'BROWSER_VERSION', defaultValue: '128.0', description: 'Browser Version')
         choice(name: 'THREADS', choices: ['1', '2', '4'], description: 'Number of Threads')
