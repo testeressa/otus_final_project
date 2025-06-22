@@ -1,0 +1,10 @@
+services:
+ agent:
+    image: jenkins_agent_pytest:latest
+    privileged: true
+    user: root
+    container_name: agent
+    ports:
+      - 2222:22
+    volumes:
+      - ./authorized_keys:/root/.ssh/authorized_keys

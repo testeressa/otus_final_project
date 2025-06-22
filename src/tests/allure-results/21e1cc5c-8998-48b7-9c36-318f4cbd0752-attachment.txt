@@ -1,1 +1,0 @@
-{'firstname': 'Test_CEbUKI', 'lastname': 'User_NHnJiP', 'email': 'test_xHbRuD@example.com', 'password': 'Pass_fxbESj123!'}

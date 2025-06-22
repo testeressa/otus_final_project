@@ -1,7 +1,0 @@
-INFO     test_currency_change_main_page:conftest.py:55 ===> Test started at 2025-06-21 18:52:46.260034
-INFO     test_currency_change_main_page:conftest.py:140 Browser chrome started
-INFO     test_currency_change_main_page:base_page.py:12 PageMain: Opening url: http://192.168.0.28:8091/home
-INFO     test_currency_change_main_page:main_page.py:17 PageMain: Getting current currency
-INFO     test_currency_change_main_page:header_element.py:31 Selecting currency: EUR
-INFO     test_currency_change_main_page:main_page.py:17 PageMain: Getting current currency
-INFO     test_currency_change_main_page:conftest.py:144 ===> Test finished at 2025-06-21 18:52:47.553759

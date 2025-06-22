@@ -1,6 +1,0 @@
-INFO     test_add_item:conftest.py:55 ===> Test started at 2025-06-21 18:52:25.062711
-INFO     test_add_item:conftest.py:140 Browser chrome started
-INFO     test_add_item:base_page.py:12 PageShoppingCart: Opening url: http://192.168.0.28:8091/home
-INFO     test_add_item:shopping_cart_page.py:21 PageShoppingCart: Adding item to cart
-INFO     test_add_item:base_page.py:12 PageShoppingCart: Opening url: http://192.168.0.28:8091/en-gb?route=checkout/cart
-INFO     test_add_item:conftest.py:144 ===> Test finished at 2025-06-21 18:52:26.668972

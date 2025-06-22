@@ -1,7 +1,0 @@
-INFO     test_currency_change_catalog:conftest.py:55 ===> Test started at 2025-06-21 18:53:11.809166
-INFO     test_currency_change_catalog:conftest.py:140 Browser chrome started
-INFO     test_currency_change_catalog:base_page.py:12 PageCatalog: Opening url: http://192.168.0.28:8091/catalog/desktops
-INFO     test_currency_change_catalog:catalog_page.py:18 PageCatalog: Getting current currency
-INFO     test_currency_change_catalog:header_element.py:31 Selecting currency: EUR
-INFO     test_currency_change_catalog:catalog_page.py:18 PageCatalog: Getting current currency
-INFO     test_currency_change_catalog:conftest.py:144 ===> Test finished at 2025-06-21 18:53:13.227358

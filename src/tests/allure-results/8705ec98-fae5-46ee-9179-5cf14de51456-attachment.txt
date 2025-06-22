@@ -1,4 +1,0 @@
-INFO     test_login_succeed_and_logout:conftest.py:53 ===> Test started at 2025-06-21 15:22:45.634772
-INFO     test_login_succeed_and_logout:conftest.py:136 Browser chrome started
-INFO     test_login_succeed_and_logout:base_page.py:12 PageAdmin: Opening url: http://192.168.0.12:8090/administration
-INFO     test_login_succeed_and_logout:conftest.py:140 ===> Test finished at 2025-06-21 15:23:08.654802

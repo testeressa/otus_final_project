@@ -1,1 +1,0 @@
-INFO     test_login_succeed_and_logout:conftest.py:55 ===> Test started at 2025-06-21 18:39:02.729551
