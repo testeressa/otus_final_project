@@ -44,7 +44,7 @@ pipeline {
                     allure includeProperties: false, jdk: '', results: [[path: "/allure-results"]]
                 }
             }
-            archiveArtifacts artifacts: "/allure-results/**", fingerprint: true
+            archiveArtifacts artifacts: "/allure-results/**", fingerprint: true, allowEmptyArchive: true
         }
     }
-
+}
